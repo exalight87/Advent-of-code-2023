@@ -5,6 +5,7 @@
 #include <fstream>
 #include <unordered_map>
 #include <algorithm>
+#include <filesystem>
 
 #define PART1 false
 
@@ -85,7 +86,7 @@ bool IsSetPossible(std::string setStr, uint32_t red, uint32_t green, uint32_t bl
 
 int main(int argc, char const *argv[])
 {
-    std::ifstream file("C:\\projects\\adventOfCode\\2\\input.txt");
+    std::ifstream file(std::filesystem::current_path() / "input.txt");
 
     uint32_t red = 12;
     uint32_t green = 13;

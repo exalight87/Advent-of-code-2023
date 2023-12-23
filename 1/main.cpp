@@ -5,6 +5,7 @@
 #include <fstream>
 #include <unordered_map>
 #include <algorithm>
+#include <filesystem>
 
 std::unordered_map<std::string, char> SUPPORTED_TOKENS = 
 {
@@ -76,7 +77,7 @@ int CalibrationValue(std::string_view calibrationStr)
 
 int main(int argc, char const *argv[])
 {
-    std::ifstream file("C:\\projects\\adventOfCode\\1\\input.txt");
+    std::ifstream file(std::filesystem::current_path() / "input.txt");
 
     if (file.is_open()) {
         int64_t sum = 0;
